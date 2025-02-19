@@ -4,11 +4,25 @@ def bubble_sort(nums: list) -> list:
         for j in range(n - i - 1):  # 마지막 1개는 이미 정렬됨
             if nums[j] > nums[j + 1]:
                 nums[j], nums[j + 1] = nums[j + 1], nums[j]  # swap
+            print(nums)
     return nums
 
 
+print("버블정렬")
 nums = [5, 3, 8, 2, 1]
-print(bubble_sort(nums))
+print("nums:", nums)
+bubble_sort(nums)
+# [5, 3, 8, 2, 1]
+# [3, 5, 8, 2, 1]
+# [3, 5, 8, 2, 1]
+# [3, 5, 2, 8, 1]
+# [3, 5, 2, 1, 8]
+# [3, 5, 2, 1, 8]
+# [3, 2, 5, 1, 8]
+# [3, 2, 1, 5, 8]
+# [2, 3, 1, 5, 8]
+# [2, 1, 3, 5, 8]
+# [1, 2, 3, 5, 8]
 
 
 def optimized_bubble_sort(arr):
@@ -24,5 +38,7 @@ def optimized_bubble_sort(arr):
     return arr
 
 
+print("최적화 버블정렬")
 nums = [2, 3, 4, 5, 8]  # 이미 정렬된 배열
+print("nums:", nums)
 print(optimized_bubble_sort(nums))  # 출력: [2, 3, 4, 5, 8]
